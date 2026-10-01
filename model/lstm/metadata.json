@@ -1,0 +1,64 @@
+{
+  "dataset": "Amazon",
+  "target": "Close",
+  "lookback": 60,
+  "architecture": "lstm",
+  "target_transform": "price",
+  "config": {
+    "seed": 42,
+    "hidden": 64,
+    "dropout": 0.2,
+    "lr": 0.001,
+    "batch_size": 64,
+    "max_epochs": 250,
+    "min_epochs": 30,
+    "patience": 25,
+    "lr_factor": 0.5,
+    "lr_patience": 5,
+    "clipnorm": 1.0,
+    "train_shuffle": false
+  },
+  "scalers": {
+    "AMZN": {
+      "mean": 11.580531884866579,
+      "scale": 17.44471563466367,
+      "fit_rows": 5359,
+      "fit_last_date": "2018-08-29"
+    }
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.1",
+    "pandas": "2.3.1",
+    "scikit-learn": "1.9.0",
+    "torch": "2.8.0",
+    "tensorflow": "2.20.0rc0",
+    "keras": "3.11.1"
+  },
+  "csv_sha256": "0baf98d114fcf60cfea96f90b99f51b5ef7df19258536fa56f7c883d50af1050",
+  "training": {
+    "pytorch": {
+      "epochs": 49,
+      "train_seconds": 46.14530409999861,
+      "best_val_loss": 0.19675283237526425,
+      "best_epoch": 24,
+      "device": "cpu",
+      "parameters": 17217,
+      "checkpoint_reload_checked": true
+    },
+    "keras": {
+      "epochs": 58,
+      "train_seconds": 108.26431149999917,
+      "best_val_loss": 0.08561493456363678,
+      "best_epoch": 33,
+      "device": "[LogicalDevice(name='/device:CPU:0', device_type='CPU')]",
+      "parameters": 16961,
+      "checkpoint_reload_checked": true
+    }
+  },
+  "runtime_threads": {
+    "OMP_NUM_THREADS": null,
+    "TF_NUM_INTRAOP_THREADS": null,
+    "TF_NUM_INTEROP_THREADS": null
+  }
+}
